@@ -39,6 +39,13 @@
         <activity
             android:name=".activity.BlacklistActivity"
             android:label="Blacklist" />
+        <activity android:name=".activity.PdfMain" />
+        <activity
+            android:name=".activity.UploadedPDFs"
+            android:label="@string/title_activity_uploaded_pdfs"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".activity.UploadWeekly" />
+        <activity android:name=".activity.Uploadmonthly" />
     </application>
 
 </manifest>

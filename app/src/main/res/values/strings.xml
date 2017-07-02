@@ -30,7 +30,9 @@
     <string name="action_mark_all_read">Mark All as Read</string>
     <string name="privacy_policy">Directory</string>
     <string name="blacklist">Blacklist</string>
+    <string name="pdf">Generate PDF</string>
     <string name="title_activity_detail">Detail</string>
     <string name="textview">TextView</string>
+    <string name="title_activity_uploaded_pdfs">UploadedPDFs</string>
 
 </resources>

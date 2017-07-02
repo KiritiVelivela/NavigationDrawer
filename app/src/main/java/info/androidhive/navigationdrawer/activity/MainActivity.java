@@ -255,6 +255,12 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this, BlacklistActivity.class));
                         drawer.closeDrawers();
                         return true;
+                    case R.id.nav_pdf:
+                        navItemIndex = 4;
+                        // launch new intent instead of loading fragment
+                        startActivity(new Intent(MainActivity.this, PdfMain.class));
+                        drawer.closeDrawers();
+                        return true;
                     default:
                         navItemIndex = 0;
                 }
@@ -293,6 +299,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (rol.equals("Manager")) {
                    navigationView.getMenu().findItem(R.id.nav_about_us).setVisible(true);
+                    navigationView.getMenu().findItem(R.id.nav_pdf).setVisible(true);
                 }
                  Log.w("r", "r = " + rol);
 
