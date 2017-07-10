@@ -38,12 +38,13 @@ import info.androidhive.navigationdrawer.other.DataSet;
 public class BlacklistActivity extends AppCompatActivity {
 
     private static final String tag = MainActivity.class.getSimpleName();
-    private static final String url = "http://10.0.2.2:3000/customers";
+    private static final String url = "http://192.168.0.2:3000/customers";
     private List<DataSet> list = new ArrayList<DataSet>();
     private ListView listView;
     private Adapter adapter;
     private CheckBox chkTechnologyExists;
     private Button btnAdd;
+    public int ddd;
 
 
     @Override
@@ -70,11 +71,15 @@ public class BlacklistActivity extends AppCompatActivity {
 
                                         JSONObject obj = response.getJSONObject(i);
                                         DataSet dataSet = new DataSet();
+                                        ddd = dataSet.setId(obj.getInt("id"));
+                                        Log.w("idd", "idd="+ddd);
                                         dataSet.setName(obj.getString("name"));
                                         dataSet.setImage(obj.getString("avatar_url"));
                                         dataSet.setWorth(obj.getString("gender"));
-                                        //dataSet.setYear(obj.getInt("age"));
+                                        dataSet.setYear(obj.getInt("age"));
                                         dataSet.setSource(obj.getString("history"));
+                                        dataSet.setEmotion(obj.getString("emotions"));
+                                        dataSet.setBlacklist(obj.getString("blacklist"));
                                         list.add(dataSet);
                                     } catch (JSONException e) {
                                         e.printStackTrace();
@@ -104,7 +109,9 @@ public class BlacklistActivity extends AppCompatActivity {
                     @Override                    
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-
+                        Integer idd = ddd;
+                        Log.w("id", "id = "+idd);
+                        Log.w("id", "id = "+ddd);
                        String name1 = ((TextView) view.findViewById(R.id.name)).getText().toString();
                         String bitmap = ((DataSet) list.get(position)).getImage();
                         Boolean technologyexists = ((CheckBox) view.findViewById(R.id.techExists)).isChecked();
@@ -113,6 +120,7 @@ public class BlacklistActivity extends AppCompatActivity {
                         Log.w("check", "check =" + name1);
 
                         DataSet d = new DataSet();
+                        d.setId(idd);
                         d.setName(name1);
                         d.setTechnologyExists(technologyexists ? 1 : 0);
                         new MyClient(BlacklistActivity.this).add(d);

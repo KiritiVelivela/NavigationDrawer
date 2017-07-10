@@ -7,7 +7,7 @@ package info.androidhive.navigationdrawer.activity;
 public class Config {
 
     //URL to our login file
-    public static final String LOGIN_URL = "http://10.0.2.2:3000/auth/login";
+    public static final String LOGIN_URL = "http://192.168.0.2:3000/auth/login";
 
     //Keys for email and password as defined in our login
     public static final String KEY_EMAIL = "email";

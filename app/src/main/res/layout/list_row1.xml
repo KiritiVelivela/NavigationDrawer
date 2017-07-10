@@ -42,6 +42,52 @@
             android:textSize="13dp"
             />
 
+    <TextView
+        android:id="@+id/inYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/year"
+        android:textSize="@dimen/year"
+        />
+
+    <TextView
+        android:id="@+id/blacklist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/source"
+        android:layout_alignStart="@+id/source"
+        android:layout_below="@+id/source"
+        />
+
+<!--
+    <TextView
+        android:id="@+id/emotion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/inYear"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/inYear" />
+-->
+
+    <ImageView
+        android:id="@+id/emotion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/worth" />
+
+    <ImageView
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_above="@+id/source" />
+
 
     <CheckBox
         android:id="@+id/techExists"

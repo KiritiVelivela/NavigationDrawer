@@ -13,19 +13,23 @@
             <item
                 android:id="@+id/nav_about_us"
                 android:title="@string/nav_about_us"
-                android:visible="false"/>
+                android:visible="true"/>
             <item
                 android:id="@+id/nav_privacy_policy"
                 android:title="@string/privacy_policy"
-                android:visible="true"/>
+                android:visible="false"/>
             <item
                 android:id="@+id/nav_blacklist"
                 android:title="@string/blacklist"
-                android:visible="true"/>
+                android:visible="false"/>
             <item
                 android:id="@+id/nav_pdf"
                 android:title="@string/pdf"
                 android:visible="false"/>
+            <item
+                android:id="@+id/heat"
+                android:title="@string/heat"
+                android:visible="false" />
 
         </menu>
     </item>

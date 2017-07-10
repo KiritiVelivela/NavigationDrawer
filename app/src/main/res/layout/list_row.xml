@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -50,5 +51,34 @@
         android:textColor="@color/year"
         android:textSize="@dimen/year"
         />
+
+    <TextView
+        android:id="@+id/blacklist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/source"
+        android:layout_alignStart="@+id/source"
+        android:layout_below="@+id/source"
+         />
+
+    <ImageView
+        android:id="@+id/emotion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/worth" />
+
+    <ImageView
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_above="@+id/source" />
+
+
+
 
 </RelativeLayout>

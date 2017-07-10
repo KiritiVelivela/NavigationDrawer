@@ -46,6 +46,7 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".activity.UploadWeekly" />
         <activity android:name=".activity.Uploadmonthly" />
+        <activity android:name=".activity.Map" />
     </application>
 
 </manifest>

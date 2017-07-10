@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG_NOTIFICATIONS = "notifications";
     private static final String TAG_SETTINGS = "settings";
     public static String CURRENT_TAG = TAG_HOME;
+    public static String rolit = "null";
 
     // toolbar titles respected to selected nav menu item
     private String[] activityTitles;
@@ -261,6 +262,12 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this, PdfMain.class));
                         drawer.closeDrawers();
                         return true;
+                    case R.id.heat:
+                        navItemIndex = 5;
+                        // launch new intent instead of loading fragment
+                        startActivity(new Intent(MainActivity.this, Map.class));
+                        drawer.closeDrawers();
+                        return true;
                     default:
                         navItemIndex = 0;
                 }
@@ -296,11 +303,19 @@ public class MainActivity extends AppCompatActivity {
 
                 SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
                 String rol = sharedPreferences.getString(Config.SHARED_ROLE,"Not Available");
+                rolit = rol;
 
                 if (rol.equals("Manager")) {
-                   navigationView.getMenu().findItem(R.id.nav_about_us).setVisible(true);
+                   navigationView.getMenu().findItem(R.id.nav_blacklist).setVisible(true);
                     navigationView.getMenu().findItem(R.id.nav_pdf).setVisible(true);
+                    navigationView.getMenu().findItem(R.id.nav_privacy_policy).setVisible(true);
+                    navigationView.getMenu().findItem(R.id.heat).setVisible(true);
                 }
+                if (rol.equals("Cashier")) {
+                    navigationView.getMenu().findItem(R.id.nav_privacy_policy).setVisible(true);
+                    //navigationView.getMenu().findItem(R.id.activity_about_us).setVisible(true);
+                }
+
                  Log.w("r", "r = " + rol);
 
 

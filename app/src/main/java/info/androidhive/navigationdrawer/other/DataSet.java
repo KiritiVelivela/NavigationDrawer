@@ -6,18 +6,38 @@ package info.androidhive.navigationdrawer.other;
 
 public class DataSet {
 
-    private String name, avatar_url;
-    private int age;
+    private String name, avatar_url, emotions;
+    private int age, id;
+    private String blacklist;
     private String gender;
     private String history;
     private int technologyExists;
+
+    public int getId() {
+        return id;
+    }
+
+    public int setId(int id) {
+        this.id = id;
+        return id;
+    }
+
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public String setName(String name) {
         this.name = name;
+        return name;
+    }
+
+    public String getEmotion() {
+        return emotions;
+    }
+
+    public void setEmotion(String emotions) {
+        this.emotions = emotions;
     }
 
     public String getImage() {
@@ -34,6 +54,15 @@ public class DataSet {
 
     public void setYear(int year) {
         this.age = year;
+    }
+
+    public String getBlacklist() {
+        return blacklist;
+    }
+
+    public String setBlacklist(String blacklist) {
+        this.blacklist = blacklist;
+        return blacklist;
     }
 
     public String getSource() {

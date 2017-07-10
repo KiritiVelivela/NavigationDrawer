@@ -24,7 +24,7 @@ public class MyClient {
 
 
         //SAVE/RETRIEVE URLS
-        private static final String DATA_INSERT_URL="http://10.0.2.2:3000/customers/blacklist";
+        private static final String DATA_INSERT_URL="http://192.168.0.2:3000/customers/blacklist";
 
         //INSTANCE FIELDS
         private final Context c;
@@ -46,6 +46,7 @@ public class MyClient {
             {
                 AndroidNetworking.post(DATA_INSERT_URL)
                         .addBodyParameter("action","save")
+                        .addBodyParameter("id", String.valueOf(s.getId()))
                         .addBodyParameter("name",s.getName())
                         .addBodyParameter("blacklist",String.valueOf(s.getTechnologyExists()))
                         .setTag("TAG_ADD")
