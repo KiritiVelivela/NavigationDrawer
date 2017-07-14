@@ -124,12 +124,12 @@ public class Adapter extends BaseAdapter {
             //worth.setText(String.valueOf(m.getWorth()));
         }
         year.setText(String.valueOf(m.getYear()));
-       if (!Objects.equals(rolit, "Helper")) {
+
             blacklist.setText(String.valueOf(m.getBlacklist()));
            Log.w("blacklist", "blacklist ="+blacklist);
-       }
 
-       if (!Objects.equals(rolit, "Security") && !Objects.equals(rolit, "Helper")) {
+
+       if (!Objects.equals(rolit, "Security")) {
 
            if (Objects.equals(String.valueOf(m.getEmotion()), "happy")) {
                ha.setImageResource(R.drawable.ic_happy);

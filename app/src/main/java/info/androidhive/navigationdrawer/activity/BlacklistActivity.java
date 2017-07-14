@@ -38,7 +38,7 @@ import info.androidhive.navigationdrawer.other.DataSet;
 public class BlacklistActivity extends AppCompatActivity {
 
     private static final String tag = MainActivity.class.getSimpleName();
-    private static final String url = "http://192.168.0.2:3000/customers";
+    private static final String url = "http://192.168.1.40:3000/customers";
     private List<DataSet> list = new ArrayList<DataSet>();
     private ListView listView;
     private Adapter adapter;

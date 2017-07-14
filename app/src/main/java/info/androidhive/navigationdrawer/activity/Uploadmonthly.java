@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -51,6 +52,7 @@ public class Uploadmonthly extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_uploaded_notes);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         listView = (ListView) findViewById(R.id.listView);
 
@@ -102,7 +104,7 @@ public class Uploadmonthly extends AppCompatActivity {
                                 PDF pdf  = new PDF();
                                 String pdfName = jsonObject.getString("name");
                                 String pdfUrl = jsonObject.getString("url");
-                                Toast.makeText(Uploadmonthly.this,jsonObject.getString("name"), Toast.LENGTH_SHORT).show();
+                               // Toast.makeText(Uploadmonthly.this,jsonObject.getString("name"), Toast.LENGTH_SHORT).show();
                                 pdf.setName(pdfName);
                                 pdf.setUrl(pdfUrl);
                                 pdfList.add(pdf);
@@ -135,5 +137,23 @@ public class Uploadmonthly extends AppCompatActivity {
         request.add(stringRequest);
 
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == android.R.id.home) {
+            // finish the activity
+            onBackPressed();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }
 

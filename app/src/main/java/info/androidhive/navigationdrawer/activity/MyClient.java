@@ -24,7 +24,7 @@ public class MyClient {
 
 
         //SAVE/RETRIEVE URLS
-        private static final String DATA_INSERT_URL="http://192.168.0.2:3000/customers/blacklist";
+        private static final String DATA_INSERT_URL="http://192.41.170.159:3000/customers/blacklist";
 
         //INSTANCE FIELDS
         private final Context c;
